@@ -18,7 +18,6 @@ export class SearchMovie {
       api = api + '&y=' + movie.movieYear;
     }
     return this.http.get(api).map(res => res.json()).catch((err) => {
-      console.log(err);
       return err;
     });
   }

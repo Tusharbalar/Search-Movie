@@ -1,16 +1,30 @@
-<div class="row">
-  <div class="col-md-4" style="margin-top: 2%;">
+<div class="row" style="margin-top: 2%;">
+  <!-- <div class="col-md-4" style="text-align:right">
     <img width="200" height="200" src="{{details.Poster}}" alt="No Image">
-  </div>
-  <div class="col-md-8">
-    <h2>{{details.Title}}</h2>
-    <small>{{details.Plot}}</small>
-  </div>
-  <small><span class="glyphicon glyphicon-user"></span> {{details.Actors}}</small>
-  <div class="col-md-6">
-    <span class="label label-primary">{{details.imdbRating}} /10 imdbRating</span>
-    <span class="label label-success">{{details.Year}} year</span>
-    <span class="label label-info">{{details.Language}} Language</span>
-    <span class="label label-warning">{{details.imdbVotes}} Votes</span>
+  </div> -->
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{details.Title}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-4" style="text-align:right">
+          <img width="200" height="200" src="{{details.Poster}}" alt="No Image">
+        </div>
+        <div class="col-md-8">
+
+          {{details.Plot}}
+          <div style="padding:25px;">
+            <span class="label label-primary">{{details.imdbRating}} /10 imdbRating</span>
+            <span class="label label-success">{{details.Year}} year</span>
+            <span class="label label-info">{{details.Language}} Language</span>
+            <span class="label label-warning">{{details.imdbVotes}} Votes</span>
+          </div>
+          <div class="actors">
+            <small><span class="glyphicon glyphicon-user"></span> {{details.Actors}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
