@@ -13,7 +13,8 @@ export class MovieSearchComponent implements OnInit {
   movieName = '';
   movieForm: FormGroup;
 
-  private movie_details;
+  private movie_details = '';
+  private err;
 
   constructor(private formBuilder: FormBuilder,
               private movieService: SearchMovie) { }
@@ -37,8 +38,15 @@ export class MovieSearchComponent implements OnInit {
     const name = this.movieForm.value.movieName;
 
     this.movieService.getMovieData(name).subscribe((res) => {
-      console.log(res);
-      this.movie_details = res;
+      if (!res.Error) {
+        this.movie_details = res;
+        this.err = '';
+      } else {
+        this.err = res;
+        this.movie_details = '';
+      }
+    }, (err) => {
+      this.err = err;
     });
 
   }

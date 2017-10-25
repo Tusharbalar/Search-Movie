@@ -22,6 +22,9 @@
     </div>
   </div>
 </div>
-<div *ngIf="movie_details">
+<div *ngIf="err" class="alert alert-danger">
+  <strong>Error!</strong> {{err | json}}
+</div>
+<div *ngIf="movie_details.Response">
   <app-movie-details [details]="movie_details"></app-movie-details>
 </div>

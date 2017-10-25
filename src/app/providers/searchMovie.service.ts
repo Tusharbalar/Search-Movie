@@ -14,7 +14,14 @@ export class SearchMovie {
 
   getMovieData(movieName) {
     const api = this.baseUrl + movieName + '&apikey=e260c91c';
-    return this.http.get(api).map(res => res.json()).catch(err => err);
+    return this.http.get(api).map(res => res.json()).catch((err) => {
+      console.log(err);
+      return err;
+    });
+  }
+
+  private handleError() {
+
   }
 
 }
