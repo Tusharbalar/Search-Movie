@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { rootRouterConfig } from './app.routes';
 import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchMovie } from './providers/searchMovie.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(rootRouterConfig),
   ],
-  providers: [],
+  providers: [SearchMovie],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
