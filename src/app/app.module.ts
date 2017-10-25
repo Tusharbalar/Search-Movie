@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { rootRouterConfig } from './app.routes';
-import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 
 @NgModule({
   declarations: [

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieSearchComponent implements OnInit {
 
+  movieName = '';
+
   constructor() { }
 
   ngOnInit() {
