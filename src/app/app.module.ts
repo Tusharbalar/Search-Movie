@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { rootRouterConfig } from './app.routes';
 import { MovieSearchComponent } from './components/movie-search/movie-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MovieSearchComponent } from './components/movie-search/movie-search.com
   ],
   imports: [
     BrowserModule,
+    FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(rootRouterConfig),
   ],
   providers: [],

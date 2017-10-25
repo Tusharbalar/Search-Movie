@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-movie-search',
@@ -8,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class MovieSearchComponent implements OnInit {
 
   movieName = '';
+  movieForm: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.initForm();
+  }
+
+  initForm() {
+    this.movieForm = this.formBuilder.group({
+      name: ['', Validators.required]
+    });
   }
 
 }
