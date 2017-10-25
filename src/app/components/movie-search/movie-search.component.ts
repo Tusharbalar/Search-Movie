@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { SearchMovie } from '../../providers/searchMovie.service';
 
 @Component({
   selector: 'app-movie-search',
@@ -11,7 +12,8 @@ export class MovieSearchComponent implements OnInit {
   movieName = '';
   movieForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private movieService: SearchMovie) { }
 
   ngOnInit() {
     this.initForm();
@@ -19,8 +21,19 @@ export class MovieSearchComponent implements OnInit {
 
   initForm() {
     this.movieForm = this.formBuilder.group({
-      name: ['', Validators.required]
+      movieName: ['', Validators.required]
     });
+  }
+
+  searchMovie() {
+    if (this.movieForm.invalid) {
+      return;
+    }
+
+    this.movieService.getMovieData('s').subscribe((res) => {
+      console.log(res);
+    });
+
   }
 
 }
