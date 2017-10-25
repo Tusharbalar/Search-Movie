@@ -5,3 +5,8 @@ body {
 .navbar-static-top {
   margin-bottom: 19px;
 }
+
+.title {
+  left: 17%;
+  position: relative;
+}

@@ -4,8 +4,7 @@ import { SearchMovie } from '../../providers/searchMovie.service';
 
 @Component({
   selector: 'app-movie-search',
-  templateUrl: './movie-search.component.html',
-  styleUrls: ['./movie-search.component.css']
+  templateUrl: './movie-search.component.html'
 })
 
 export class MovieSearchComponent implements OnInit {
