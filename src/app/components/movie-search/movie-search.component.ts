@@ -7,6 +7,7 @@ import { SearchMovie } from '../../providers/searchMovie.service';
   templateUrl: './movie-search.component.html',
   styleUrls: ['./movie-search.component.css']
 })
+
 export class MovieSearchComponent implements OnInit {
 
   movieName = '';
