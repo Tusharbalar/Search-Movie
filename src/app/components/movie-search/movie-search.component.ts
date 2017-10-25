@@ -12,16 +12,19 @@ export class MovieSearchComponent implements OnInit {
   movieName = '';
   movieForm: FormGroup;
 
+  private movie_details;
+
   constructor(private formBuilder: FormBuilder,
               private movieService: SearchMovie) { }
 
   ngOnInit() {
     this.initForm();
+    this.searchMovie();
   }
 
   initForm() {
     this.movieForm = this.formBuilder.group({
-      movieName: ['', Validators.required]
+      movieName: ['Dhol', Validators.required]
     });
   }
 
@@ -30,8 +33,11 @@ export class MovieSearchComponent implements OnInit {
       return;
     }
 
-    this.movieService.getMovieData('s').subscribe((res) => {
+    const name = this.movieForm.value.movieName;
+
+    this.movieService.getMovieData(name).subscribe((res) => {
       console.log(res);
+      this.movie_details = res;
     });
 
   }
