@@ -5,8 +5,8 @@ Please make sure you have also installed angular cli with latest version.
 
 ### Installation
 
-1) Clone project code
-2) cd movie-search
+1) git clone git@github.com:Tusharbalar/Search-Movie-Angular4.git
+2) cd Search-Movie-Angular4
 3) npm install
 4) ng serve
 
