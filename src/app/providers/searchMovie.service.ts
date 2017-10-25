@@ -12,8 +12,11 @@ export class SearchMovie {
 
   }
 
-  getMovieData(movieName) {
-    const api = this.baseUrl + movieName + '&apikey=e260c91c';
+  getMovieData(movie) {
+    let api = this.baseUrl + movie.movieName + '&apikey=e260c91c';
+    if (movie.movieYear) {
+      api = api + '&y=' + movie.movieYear;
+    }
     return this.http.get(api).map(res => res.json()).catch((err) => {
       console.log(err);
       return err;

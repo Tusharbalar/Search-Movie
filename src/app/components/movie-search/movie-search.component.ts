@@ -26,7 +26,8 @@ export class MovieSearchComponent implements OnInit {
 
   initForm() {
     this.movieForm = this.formBuilder.group({
-      movieName: ['Dhol', Validators.required]
+      movieName: ['Dhol', Validators.required],
+      movieYear: ['']
     });
   }
 
@@ -35,9 +36,7 @@ export class MovieSearchComponent implements OnInit {
       return;
     }
 
-    const name = this.movieForm.value.movieName;
-
-    this.movieService.getMovieData(name).subscribe((res) => {
+    this.movieService.getMovieData(this.movieForm.value).subscribe((res) => {
       if (!res.Error) {
         this.movie_details = res;
         this.err = '';

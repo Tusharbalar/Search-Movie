@@ -1,18 +1,27 @@
 <div class="row">
-  <div class="col-md-offset-2 col-md-6 col-xs-4">
+  <div class="col-md-offset-2 col-md-10 col-xs-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <form name="circular" [formGroup]="movieForm" (ngSubmit)="searchMovie()" novalidate>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
               <div class="input-group">
+                <label>Movie Name:</label>
                 <input type="text" formControlName="movieName" class="form-control">
-                <div class="input-group-btn">
-                  <div class="btn-group" role="group">
-                    <button type="submit" class="btn btn-primary">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <label>Movie Year:</label>
+                <input type="text" formControlName="movieYear" placeholder="Year" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-4" style="top:24px">
+              <div class="input-group-btn">
+                <div class="btn-group" role="group">
+                  <button type="submit" class="btn btn-primary">
+                    Search
+                  </button>
                 </div>
               </div>
             </div>
