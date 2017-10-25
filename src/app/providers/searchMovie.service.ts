@@ -14,7 +14,7 @@ export class SearchMovie {
 
   getMovieData(movie) {
     let api = this.baseUrl + movie.movieName + '&apikey=e260c91c';
-    if (movie.movieYear) {
+    if (movie.movieYear) { // check for years
       api = api + '&y=' + movie.movieYear;
     }
     return this.http.get(api).map(res => res.json()).catch((err) => {
@@ -23,7 +23,7 @@ export class SearchMovie {
   }
 
   private handleError() {
-
+    // Error Handling
   }
 
 }

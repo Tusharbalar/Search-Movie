@@ -1,0 +1,12 @@
+<!-- Search Component -->
+<app-movie-search (emitData)="onSearch($event)"></app-movie-search>
+
+<!-- Error Handling -->
+<div *ngIf="err" class="alert alert-danger">
+  <strong>Error!</strong> {{err | json}}
+</div>
+
+<!-- Movie Details Component -->
+<div *ngIf="movie_details.Response">
+  <app-movie-details [details]="movie_details"></app-movie-details>
+</div>

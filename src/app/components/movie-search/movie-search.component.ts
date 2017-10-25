@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { SearchMovie } from '../../providers/searchMovie.service';
 
@@ -13,17 +13,19 @@ export class MovieSearchComponent implements OnInit {
   movieName = '';
   movieForm: FormGroup;
 
-  private movie_details = '';
-  private err;
+  @Output()
+  private emitData = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder,
               private movieService: SearchMovie) { }
 
+  // Called After component render into DOM
   ngOnInit() {
     this.initForm();
     this.searchMovie();
   }
 
+  // Reactive Form Module
   initForm() {
     this.movieForm = this.formBuilder.group({
       movieName: ['Dhol', Validators.required],
@@ -31,23 +33,15 @@ export class MovieSearchComponent implements OnInit {
     });
   }
 
+  // Search Movie By Name and Year
   searchMovie() {
     if (this.movieForm.invalid) {
       return;
     }
 
     this.movieService.getMovieData(this.movieForm.value).subscribe((res) => {
-      if (!res.Error) {
-        this.movie_details = res;
-        this.err = '';
-      } else {
-        this.err = res;
-        this.movie_details = '';
-      }
-    }, (err) => {
-      this.err = err;
+      this.emitData.emit(res);
     });
-
   }
 
 }

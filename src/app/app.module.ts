@@ -8,11 +8,13 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchMovie } from './providers/searchMovie.service';
 import { RequestOptions, XHRBackend, HttpModule } from '@angular/http';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieSearchComponent,
+    MovieComponent,
     MovieDetailsComponent
   ],
   imports: [
